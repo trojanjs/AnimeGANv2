@@ -2,7 +2,7 @@ from AnimeGANv2 import AnimeGANv2
 import argparse
 from tools.utils import *
 import os
-os.environ["CUDA_VISIBLE_DEVICES"] = "1"
+os.environ["CUDA_VISIBLE_DEVICES"] = "0"
 
 """parsing and configuration"""
 
@@ -43,13 +43,13 @@ def parse_args():
     parser.add_argument('--sn', type=str2bool, default=True, help='using spectral norm')
 
 
-    parser.add_argument('--checkpoint_dir', type=str, default='checkpoint',
+    parser.add_argument('--checkpoint_dir', type=str, default='/content/drive/MyDrive/gan/checkpoints',
                         help='Directory name to save the checkpoints')
-    parser.add_argument('--result_dir', type=str, default='results',
+    parser.add_argument('--result_dir', type=str, default='/content/results',
                         help='Directory name to save the generated images')
-    parser.add_argument('--log_dir', type=str, default='logs',
+    parser.add_argument('--log_dir', type=str, default='/content/results',
                         help='Directory name to save training logs')
-    parser.add_argument('--sample_dir', type=str, default='samples',
+    parser.add_argument('--sample_dir', type=str, default='/content/results',
                         help='Directory name to save the samples on training')
 
     return check_args(parser.parse_args())
